@@ -1,0 +1,83 @@
+#pragma kernel CSMain
+#pragma kernel FadeTrail
+
+RWTexture2D<float4> Result;
+RWStructuredBuffer<float2> agentPositions;
+RWStructuredBuffer<float2> agentDirections;
+
+int width;
+int height;
+int agentCount;
+float deltaTime;
+float sensorAngle;
+float sensorDistance;
+float turnSpeed;
+float fadeFactor;
+
+
+float2 rotate(float2 v, float angle)
+{
+    float s = sin(angle);
+    float c = cos(angle);
+    return float2(c * v.x - s * v.y, s * v.x + c * v.y);
+}
+
+[numthreads(256, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= agentCount)
+        return;
+
+    float2 pos = agentPositions[id.x];
+    float2 dir = agentDirections[id.x];
+
+    float angle = atan2(dir.y, dir.x);
+    float leftAngle = angle + radians(sensorAngle);
+    float rightAngle = angle - radians(sensorAngle);
+
+    float2 forwardSensor = pos + dir * sensorDistance;
+    float2 leftSensor = pos + float2(cos(leftAngle), sin(leftAngle)) * sensorDistance;
+    float2 rightSensor = pos + float2(cos(rightAngle), sin(rightAngle)) * sensorDistance;
+
+    float forward = Result[int2(clamp(forwardSensor.x, 0, width - 1), clamp(forwardSensor.y, 0, height - 1))].r;
+    float left = Result[int2(clamp(leftSensor.x, 0, width - 1), clamp(leftSensor.y, 0, height - 1))].r;
+    float right = Result[int2(clamp(rightSensor.x, 0, width - 1), clamp(rightSensor.y, 0, height - 1))].r;
+
+    float turnAngle = radians(sensorAngle * deltaTime * turnSpeed);
+    if (left > forward && left > right)
+        dir = rotate(dir, turnAngle);
+    else if (right > forward && right > left)
+        dir = rotate(dir, -turnAngle);
+
+    dir = normalize(dir);
+
+    float moveSpeed = 100.0; 
+    pos += dir * deltaTime * moveSpeed;
+
+    if (pos.x < 0 || pos.x >= width)
+    {
+        dir.x *= -1;
+        pos.x = clamp(pos.x, 1, width - 2);
+    }
+    if (pos.y < 0 || pos.y >= height)
+    {
+        dir.y *= -1;
+        pos.y = clamp(pos.y, 1, height - 2);
+    }
+
+    agentPositions[id.x] = pos;
+    agentDirections[id.x] = dir;
+
+    Result[int2((int) pos.x, (int) pos.y)] = float4(1, 1, 1, 1);
+}
+
+[numthreads(8, 8, 1)]
+void FadeTrail(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= width || id.y >= height)
+        return;
+
+    float4 color = Result[int2(id.x, id.y)];
+    color.rgb *= fadeFactor;
+    Result[int2(id.x, id.y)] = color;
+}
