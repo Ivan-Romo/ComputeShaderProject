@@ -347,8 +347,8 @@ MonoBehaviour:
   height: 1440
   agentCount: 1000000
   sensorAngle: 30
-  sensorDistance: 20
-  turnSpeed: 30
+  sensorDistance: 30
+  turnSpeed: 40
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1204025705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,15 +457,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204025704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e84a71ccb4dc2d64fb615ebba572609f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 24422274}
-  width: 1920
-  height: 1080
-  agentCount: 100000
+  width: 1440
+  height: 810
+  agentCount: 10000
 --- !u!4 &1204025706
 Transform:
   m_ObjectHideFlags: 0

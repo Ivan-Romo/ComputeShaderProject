@@ -1,5 +1,7 @@
+// === SlimeTrail.compute ===
 #pragma kernel CSMain
 #pragma kernel FadeTrail
+#pragma kernel SmoothTrail
 
 RWTexture2D<float4> Result;
 RWStructuredBuffer<float2> agentPositions;
@@ -13,7 +15,6 @@ float sensorAngle;
 float sensorDistance;
 float turnSpeed;
 float fadeFactor;
-
 
 float2 rotate(float2 v, float angle)
 {
@@ -51,7 +52,7 @@ void CSMain(uint3 id : SV_DispatchThreadID)
 
     dir = normalize(dir);
 
-    float moveSpeed = 100.0; 
+    float moveSpeed = 400.0;
     pos += dir * deltaTime * moveSpeed;
 
     if (pos.x < 0 || pos.x >= width)
@@ -80,4 +81,25 @@ void FadeTrail(uint3 id : SV_DispatchThreadID)
     float4 color = Result[int2(id.x, id.y)];
     color.rgb *= fadeFactor;
     Result[int2(id.x, id.y)] = color;
+}
+
+[numthreads(8, 8, 1)]
+void SmoothTrail(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= width || id.y >= height)
+        return;
+
+    float3 sum = float3(0, 0, 0);
+    int2 coords = int2(id.x, id.y);
+
+    for (int dx = -1; dx <= 1; dx++)
+    {
+        for (int dy = -1; dy <= 1; dy++)
+        {
+            int2 sampleCoords = int2(clamp(coords.x + dx, 0, width - 1), clamp(coords.y + dy, 0, height - 1));
+            sum += Result[sampleCoords].rgb;
+        }
+    }
+
+    Result[coords] = float4(sum / 9.0, 1);
 }

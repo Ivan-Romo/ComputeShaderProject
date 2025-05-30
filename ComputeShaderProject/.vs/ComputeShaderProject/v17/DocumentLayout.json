@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|c:\\users\\ivanr\\desktop\\ivanromo\\proyectos\\computeshaderproject\\computeshaderproject\\assets\\project\\compute.compute||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\compute.compute||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\assets\\project\\pixelsimulatorgpu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\pixelsimulatorgpu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\assets\\project\\compute.compute||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\compute.compute||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\assets\\project\\testscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31D145DF-7601-8A1F-4164-BB94EE5975D5}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\testscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "TestScript.cs",
+              "DocumentMoniker": "C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\Assets\\Project\\TestScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\TestScript.cs",
+              "ToolTip": "C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\Assets\\Project\\TestScript.cs",
+              "RelativeToolTip": "Assets\\Project\\TestScript.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAvwEQAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:52:55.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PixelSimulatorGPU.cs",
               "DocumentMoniker": "C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\Assets\\Project\\PixelSimulatorGPU.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\PixelSimulatorGPU.cs",
               "ToolTip": "C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\Assets\\Project\\PixelSimulatorGPU.cs",
               "RelativeToolTip": "Assets\\Project\\PixelSimulatorGPU.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAswB0AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAwEUAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T13:32:47.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Compute.compute",
               "DocumentMoniker": "C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\Assets\\Project\\Compute.compute",
               "RelativeDocumentMoniker": "Assets\\Project\\Compute.compute",
               "ToolTip": "C:\\Users\\ivanr\\Desktop\\IvanRomo\\Proyectos\\ComputeShaderProject\\ComputeShaderProject\\Assets\\Project\\Compute.compute",
               "RelativeToolTip": "Assets\\Project\\Compute.compute",
-              "ViewState": "AgIAACgAAAAAAAAAAAAowDMAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAADwv1QAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
               "WhenOpened": "2025-05-23T13:31:32.244Z",
               "EditorCaption": ""
